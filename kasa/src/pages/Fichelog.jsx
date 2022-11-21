@@ -25,6 +25,7 @@ const Fichelog = () => {
     <>
     {
     product ? (
+      // Affichage de la fiche produit si id OK
     <div className="fichelog">
       <Slider slides={pictures} />
       <div className="fichelog__content">
@@ -47,7 +48,9 @@ const Fichelog = () => {
         <Collapse title="Equipement" content={equipments} />
       </div>
     </div>
-    // console.log("BURK",product):
+
+  // Sinon id erroné
+
     ) : <Navigate replace to="/Error"/>
             }
           
