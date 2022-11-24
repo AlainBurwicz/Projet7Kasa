@@ -136,6 +136,9 @@ code {
     height: 52px;
   }
 }
+.collapse__lt {
+  font-size: 40px;
+}
 .collapse__arrow {
   font-size: 22px;
   margin-right: 1rem;
@@ -521,6 +524,176 @@ code {
     transform: translateY(0);
   }
 }
+.fleche {
+  font-size: 13px;
+  background-color: #F6F6F6;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.fleche_title {
+  z-index: 2;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: calc(100% - 30px);
+  height: 10px;
+  color: white;
+  background-color: #FF6060;
+  padding: 10px 30px 10px 20px;
+  line-height: 30px;
+  border-radius: 5px;
+}
+
+.fleche_title h2 {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.fleche_cursor {
+  -webkit-transition: -webkit-transform 250ms ease;
+  transition: -webkit-transform 250ms ease;
+  transition: transform 250ms ease;
+  transition: transform 250ms ease, -webkit-transform 250ms ease;
+  -webkit-transform: rotateX(-180deg);
+  transform: rotateX(-180deg);
+  width: 12px;
+}
+
+.fleche_body {
+  color: #FF6060;
+  z-index: 1;
+  -webkit-transition: max-height 750ms ease;
+  transition: max-height 750ms ease;
+}
+
+.fleche_body_child {
+  padding: 10px 30px 10px 20px;
+}
+
+@media (min-width: 520px) {
+  .fleche {
+    font-size: 18px;
+  }
+  .fleche_title {
+    width: calc(100% - 50px);
+    height: 27px;
+  }
+  .fleche_title h2 {
+    font-size: 18px;
+  }
+  .fleche_cursor {
+    width: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  .dropdown {
+    font-size: 24px;
+  }
+  .dropdown_title h2 {
+    font-size: 24px;
+  }
+  .dropdown_cursor {
+    width: unset;
+  }
+}
+.detaillogement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 30px 0 30px 0;
+  color: #FF6060;
+}
+
+.detaillogement_container_gauche {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.detaillogement_container_gauche h2 {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.detaillogement_container_droit {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.tag_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+@media (min-width: 650px) {
+  .tag_list {
+    margin-top: 20px;
+  }
+  .detaillogement {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+  .detaillogement_container_gauche {
+    font-size: 18px;
+  }
+  .detaillogement_container_gauche h2 {
+    font-size: 36px;
+  }
+  .detaillogement_container_droit {
+    width: 50%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 0;
+  }
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -671,23 +844,33 @@ code {
 }
 
 .apropos {
-  margin: 0 5%;
-}
-.apropos__dropdowns {
-  font-size: 20px;
-  width: 90%;
-  text-align: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media only screen and (min-width: 992px) {
-  .apropos__dropdowns {
-    margin: 1%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: calc(100% - 40px);
+  gap: 20px;
+  padding: 20px 0;
+  margin: auto;
+  max-width: 1008px;
 }
 
+@media (min-width: 520px) {
+  .apropos {
+    gap: 30px;
+    padding: 30px 0;
+    width: 70%;
+  }
+}
 .accueil {
   margin: 0 5%;
 }

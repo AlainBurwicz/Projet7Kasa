@@ -1,53 +1,60 @@
-import React from 'react';
+import { Component} from 'react';
+import flecheHautBas from '../assets/FlecheBas.svg';
 
-// Possibilité de faire un ajustement de l'ouverture du collapse avec un hook usestate
-// import React, { useState } from 'react';
-// function Example() {
-// ...
-//   }
+// Passage d’un évenement "onClick" à un composant React (Documentation React)
 
-const Collapse = ({ title, content }) => {
-  const isCollapse = (e) => {
-    e.preventDefault();
-    const divText = e.target.nextSibling;
-    const arrow = e.target.lastChild;
-
-    // Animation de rotation de la flèche Haut / Bas
-
-    if (!divText.classList.contains('show')) {
-      divText.classList.add('show');
-      arrow.classList.add('rotate');
-    } else {
-      divText.classList.remove('show');
-      arrow.classList.remove('rotate');
+class Collapse extends Component
+{
+    constructor(props)
+    {
+        super(props)
+        this.state = {
+            isCollapse: true,  // Valeur par défaut flèche en bas
+            maxHeight: 1
+        }
     }
-  };
 
 
-  return (
-    <div className="collapse ">
-      <button type="button" className="collapse__button" onClick={isCollapse}>{title}
+    handleClick = (e) =>
+    {
+        let originNode = e.target
+        while (originNode.className !== "fleche") originNode = originNode.parentNode
+        const maxHeight = originNode.querySelector(".fleche_body_child").offsetHeight
+        const cursorNode = originNode.querySelector(".fleche_cursor")
+        const bodyNode = originNode.querySelector(".fleche_body")
 
-    {/* Collapse développement et réduction du contenu du bouton. Il est en mode réduit par défaut défini par l'opérateur mathématique "&lt" => (moins que) */}
-    {/* Après le click la zone se développe */}
-        <p className="collapse__arrow">&lt;</p>
-      </button>
-    
-      <div className="collapse__content">
-        {Array.isArray(content) ? (
-          <ul className="collapse__list">
-            {content.map((equipment, index) => (
-              <li key={index} className="collapse__list-element">
-                {equipment}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="collapse__text">{content}</p>
-        )}
-      </div>
-    </div>
-  );
-};
+        // Gestion rotation flèche et liste déroulante
+        
+        if (this.state.isCollapse)
+        {
+            bodyNode.style.maxHeight = maxHeight + "px"
+            cursorNode.style.transform = "rotateX(0deg)"
+            this.setState({ isCollapse: false })
+        }
+        else
+        {
+            bodyNode.style.maxHeight = "0px"
+            cursorNode.style.transform = "rotateX(-180deg)"
+            this.setState({ isCollapse: true })
+        }
+    }
+    render()
+    {
+        return (
+            <div className="fleche" >
+                <div className="fleche_title" onClick={ this.handleClick }>
+                    <h2>{this.props.titre}</h2>
+                    <img className="fleche_cursor" src={flecheHautBas} alt="curseur" />
+                </div>
+                <div className="fleche_body" style={{maxHeight : 0}}>
+                    <div className="fleche_body_child">
+                        {this.props.children}
+                    </div> 
+                </div>
+            </div>
+        )
+    }
+}
 
 export default Collapse;
+
