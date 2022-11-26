@@ -3,7 +3,7 @@ import products from '../datas/data.json';
 import Cial from '../components/Vendeur';
 import Rating from '../components/Rating'
 import Tags from '../components/Tags';
-import Collapse from '../components/Collapse';
+import Collapse from './Collapse';
 import Slider from '../components/Slideshow';
 
 
@@ -42,9 +42,9 @@ console.log('L17', product);
                 <Cial host={host} />
               </div>
             </div>
-            <div className="fichelog__dropdowns">
-              <Collapse title="Description" content={description} />
-              <Collapse title="Equipement" content={equipments} />
+            <div className="fichelog__dropdown">
+              <Collapse key = "zoneDesc" title="Description" content={description} />
+              <Collapse key = "zoneEqu" title="Equipement" content={equipments} />
             </div>
           </div>
     )}

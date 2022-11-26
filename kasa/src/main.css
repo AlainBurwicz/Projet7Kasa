@@ -106,7 +106,8 @@ code {
 }
 .collapse__button {
   color: #f7f7f7;
-  font-size: 20px;
+  font-size: 16px;
+  font-style: large;
   font-weight: 200;
   width: 100%;
   border: none;
@@ -140,7 +141,7 @@ code {
   font-size: 40px;
 }
 .collapse__arrow {
-  font-size: 22px;
+  font-size: 14px;
   margin-right: 1rem;
   margin-top: 2rem;
   pointer-events: none;
@@ -172,7 +173,7 @@ code {
 }
 .collapse__text {
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
 }
 @media only screen and (min-width: 768px) {
   .collapse__text {
@@ -621,7 +622,7 @@ code {
   color: #FF6060;
 }
 
-.detaillogement_container_gauche {
+.detaillogement_container_left {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -636,12 +637,12 @@ code {
   font-size: 14px;
 }
 
-.detaillogement_container_gauche h2 {
+.detaillogement_container_left h2 {
   font-size: 18px;
   font-weight: normal;
 }
 
-.detaillogement_container_droit {
+.detaillogement_container_right {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -679,13 +680,13 @@ code {
     -ms-flex-direction: row;
     flex-direction: row;
   }
-  .detaillogement_container_gauche {
+  .detaillogement_container_left {
     font-size: 18px;
   }
-  .detaillogement_container_gauche h2 {
+  .detaillogement_container_left h2 {
     font-size: 36px;
   }
-  .detaillogement_container_droit {
+  .detaillogement_container_right {
     width: 50%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
