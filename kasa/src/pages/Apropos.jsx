@@ -6,6 +6,7 @@ import imageBanner from '../assets/aproposBannerDsk.png';
 const Apropos=()=> {
   
     // Basculement pour afficher le contenu dans une liste déroulante par rapport au titre
+    // Les Notions marketing Fiabilité, respect, services... Sont dans une base à part si l'on souhaite modifier + facilement le contenu
 
   const content=(title)=> {
     switch (title) {

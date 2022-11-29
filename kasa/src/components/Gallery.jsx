@@ -12,9 +12,9 @@ const Slideshow = ({ slides }) => {
   const [current, setCurrent] = useState(0); // tableau current : objet actuel / setCurrent : ensemble
   const length = slides.length; // Lenght représente le nombre d'éléments dans ce tableau
 
-  // Diapo suivante
+  // Diapo suivante  
 
-  const nextSlide = () => {  
+  const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Error() {
+  // Page Error 404
   return (
     <div className="error">
       <div className="error__content">

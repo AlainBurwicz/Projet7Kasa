@@ -4,6 +4,8 @@ const Vendeur = ({ host }) => {
   const isHostSplited = host.name.split(' ');
   const [name, lastname] = isHostSplited;
 
+  // Affichage vendeur
+
   return (
     <div className="vendeur">
       <div className="vendeur__name">

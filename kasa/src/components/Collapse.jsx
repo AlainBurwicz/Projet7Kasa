@@ -2,15 +2,15 @@ import React from 'react';
 import flecheHautBas from '../assets/flechebas.png';
 
 
-
-// Possibilité de faire un ajustement de l'ouverture du collapse avec un hook usestate
-// import React, { useState } from 'react';
+// Définition de la zone Collapse avec les props title et content
 
 const Collapse = ({ title, content }) => {
   const isCollapse = (e) => {
     e.preventDefault();
     const divText = e.target.nextSibling;
     const arrow = e.target.lastChild;
+
+// Gestion de la rotation des flèches par defaut en bas (zone pliée)
 
     if (!divText.classList.contains('show')) {
       divText.classList.add('show');

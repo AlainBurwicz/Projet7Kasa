@@ -8,7 +8,7 @@ const Rating = ({ rating }) => {
 
   return (
     <div className="rating">
-      {/* Boucle servant à afficher l'etoile selon l'évaluation*/}
+      {/* Remplissage de l'etoile selon l'évaluation etoile rouge*/}
       {stars.map((star) =>
         rating >= star ? (
           <img
@@ -17,7 +17,9 @@ const Rating = ({ rating }) => {
             src={etoilerouge}
             alt=""
           />
+
         ) : (
+          // sinon étoile grise
           <img
             key={star.toString()}
             className="rating__icon"

@@ -3,8 +3,8 @@ import products from '../datas/data.json';
 import Cial from '../components/Vendeur';
 import Rating from '../components/Rating'
 import Tags from '../components/Tags';
-import Collapse from './Collapse';
-import Slider from '../components/Slideshow';
+import Collapse from '../components/Collapse';
+import Slider from '../components/Gallery';
 
 
 
@@ -24,7 +24,7 @@ console.log('L17', product);
 
 
         return (
-        
+        // On retourne les éléments de la page produit
             <div className="fichelog">
             <Slider slides={pictures} />
             <div className="fichelog__content">

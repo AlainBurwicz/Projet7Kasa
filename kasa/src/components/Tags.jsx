@@ -1,5 +1,7 @@
 import React from 'react';
 
+// Affichage des tags Type / Localisation...
+
 const Tags = ({ getTag }) => {
   return (
     <div className="tag">

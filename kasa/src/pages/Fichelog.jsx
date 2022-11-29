@@ -3,11 +3,6 @@
 
 import { useParams, Navigate } from 'react-router-dom';
 import products from '../datas/data.json';
-// import Rating from '../components/Rating';
-// import Cial from '../components/Vendeur';
-// import Slider from '../components/Slideshow';
-// import Tags from '../components/Tags';
-// import Collapse from '../components/Collapse';
 import DetailLogement from '../components/DetailLogement';
 
 
@@ -18,13 +13,14 @@ const Fichelog = () => {
   const { productId } = useParams();
   const product = products.find((product) => product.id === productId);
 
-//   const { title, location, rating, host, equipments, description, pictures } = product;
 
 
 
 
 
   return (
+    // Les balises vides, permettent de grouper une liste d’enfants sans ajouter de nœud supplémentaire au DOM.
+    // A noter cette syntaxe n’accepte ni clés ni attributs.
     <>
     {
     product ? (
@@ -32,7 +28,7 @@ const Fichelog = () => {
     <DetailLogement  />
 
 
-//   Si id erroné
+//   Si id erroné renvoi sur la page d'erreur.
 
     ) : <Navigate replace to="/Error"/>
             }
